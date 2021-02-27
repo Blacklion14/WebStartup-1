@@ -126,3 +126,13 @@ i{
         transform-origin: bottom right;
     }
 }
+
+a{
+    color: #212529;
+}
+
+a:hover
+{
+    color: #212529;   
+}
+
