@@ -141,7 +141,7 @@ app.get('/dev', function (req, res) {
 
 
 
-const PORT = 8080;
+const PORT = 8080 || process.env.PORT ;
 
 app.listen(PORT, () => {
   console.log("Your server is started at port " + PORT);
