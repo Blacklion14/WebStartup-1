@@ -141,10 +141,10 @@ app.get('/dev', function (req, res) {
 
 
 
-const PORT = 8080 || process.env.PORT ;
+const Port = process.env.PORT || 8080 ;
 
-app.listen(PORT, () => {
-  console.log("Your server is started at port " + PORT);
+app.listen(Port, () => {
+  console.log("Your server is started at port " + Port);
 });
 
 
