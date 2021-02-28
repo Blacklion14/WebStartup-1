@@ -63,7 +63,7 @@ h1 {
     height: 100vh;
 }
 
-@media (max-width : 764px) {
+@media (max-width : 700px) {
     .con-1 {
         display: block;
     }
@@ -75,11 +75,30 @@ h1 {
     .content {
         margin-top: 10%;
     }
+    h1{
+        font-size: 3rem;
+    }
+}
+
+@media ( max-width: 340px){
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1.3rem;
+    }
+    
 }
 
 i{
     cursor: pointer;
+
 }
+
+.fa-instagram:before,.fa-facebook:before,.fa-linkedin-in:before,.fa-envelope:before{
+    font-size: 25px;
+}
+
 .ic {
     padding: 2% 2%;
 }
