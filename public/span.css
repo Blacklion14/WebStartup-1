@@ -7,7 +7,7 @@
     background: #17a2b8;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 10px 15px 10px rgba(0, 0 , 0, 0.1);
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -20,14 +20,14 @@
     align-items: center;
     color: white;
     font-size: 2rem;
-    /* transform: translate(0%, -8%); */
+    transform: translate(0%, -8%);
 }
 
 .action.active span {
 
     transform: rotate(135deg);
-    /* left: 3px; */
-    /* bottom: -2px; */
+    left: 3px;
+    bottom: -2px;
 }
 
 .action ul {
@@ -43,7 +43,7 @@
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
-    box-shadow: 10px 15px 10px rgba(0, 0 , 0, 0.1);
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.1);
 }
 
 .action.active ul {
@@ -79,10 +79,23 @@
     opacity: 0.8;
 }
 
-a{
+a {
     color: white;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
     color: white;
+}
+
+@media (max-width: 700px) {
+
+    .action span {
+        transform: translate(0%, 0%);
+    }
+
+    .action.active span {
+        left: 0px;
+        bottom: 0px;
+    }
 }
