@@ -14,6 +14,7 @@ require("./mongoose/schemas")
 //bodyparser
 var bodyParser = require('body-parser')
 // mail feeback form 
+const fetch = require('node-fetch');
 
 const sendMail = require('./mail/mail');
 const mongoose = require("mongoose");
@@ -44,6 +45,7 @@ var fullUrl = "/";
 
 app.get('/', function (req, res) {
   fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  fetch("https://api.countapi.xyz/update/premnotes/notes?amount=1");
   res.render("index")
 });
 
