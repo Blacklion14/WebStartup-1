@@ -39,10 +39,60 @@ h1 {
     height: 60%;
 }
 
-.text,
-.link {
-    margin: 4% 0%;
+
+.text, .link{
+    margin: 2% 0%;
+    padding: 2% 5%;
+} 
+
+.link{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-direction: column;
 }
+
+.data{
+    height: inherit;
+    overflow-x: hidden; 
+    overflow-y: auto; 
+}
+
+.heading{
+    display: flex;
+    background-color: #dc3545;
+    height: 8vh;
+    align-items: center;
+}
+
+h5{ 
+    width: 100%;
+    text-align: center;
+    background-color: #dc3545;
+    color: white;
+}
+
+.new{
+    width: 90%;
+    height: 100%;
+    background-color: white;
+    padding: 2% 2%;
+    border-radius: 1%;  
+    margin-bottom: 3%;
+}
+
+li{ 
+    color: black;
+    margin-left: 3%;
+    text-align: left;
+}
+
+li:not(:last-child){
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 
 
 
@@ -54,7 +104,7 @@ h1 {
 
 
 .btn {
-    width: 20%;
+    width: 100%;
 }
 
 .show2 .fas {
@@ -81,7 +131,7 @@ i {
 
 @media(max-width:1183) {
     .btn {
-        width: 30%;
+        width: 100%;
     }
 }
 
@@ -91,21 +141,27 @@ i {
     }
 
     .btn {
-        width: 50%;
+        width: 100%;
     }
 
     .image {
         width: 90%;
     }
+    .notification{
+        justify-content: center;
+    }
 }
 
 @media(max-width: 700px) {
+    .link{
+        flex-direction: column;
+    }
     .show1 .row {
         text-align: center;
     }
 
     .btn {
-        width: 50%;
+        width: 100%;
     }
 
     .image {
@@ -125,6 +181,13 @@ i {
 
     .text {
         font-size: 1.5rem;
+    }
+    .new{
+        width: 90%;
+        height: 80%;
+    }
+    .notification{
+        justify-content: center;
     }
 }
 
@@ -181,6 +244,7 @@ i {
 
 a {
     color: #212529;
+    width: 90%;
 }
 
 a:hover {
