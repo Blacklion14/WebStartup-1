@@ -39,11 +39,19 @@ const subjectschema = new mongoose.Schema({
 
 const subject = mongoose.model("subjects", subjectschema);
 
+const notificationschema = new mongoose.Schema({
+  text:String,
+});
+
+const notification = mongoose.model("notifications", notificationschema);
+
+
 //console.log("connected with schemas");
 
 module.exports = {
   subject,
   sems,
   Year,
+  notification,
   Branch
 };

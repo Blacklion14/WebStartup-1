@@ -1,19 +1,19 @@
 <%- include ('partials/header'); -%>
 
-    <!-- Css -->
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../public/pageviews.js">
-    <title>Study</title>
+<!-- Css -->
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../public/pageviews.js">
+<title>Study</title>
 </head>
 
 <body>
-<!-- preloader -->
+    <!-- preloader -->
     <div class="preloader">
         <img src="../images/preloader.gif" alt="preloader">
         <div class="text">
-             &nbsp; Loading...
+            &nbsp; Loading...
         </div>
-        </div>
+    </div>
 
     <section class="upper">
         <div class="row">
@@ -26,6 +26,18 @@
                         <h1>A Step Towards Change</h1>
                     </div>
                     <div class="show2 link col-12">
+                        <div class="d-flex flex-column new">
+                            <div class="heading">
+                                <h5>New Items Added</h5>
+                            </div>
+                            <div class="data" id="ecran">
+                                <ul>
+                                    <% for(var i=0 ; i<resl.length ; i++ ) { %>
+                                    <li><%= resl[i].text %></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
                         <a href="/notes"><button type="button" class="btn btn-info"><i class="fas fa-bookmark"></i>Notes</button></a>
                     </div>
                 </div>
@@ -40,8 +52,9 @@
                 <div class="row">
                     <div class="col-12 cntct">
                         <i onclick="location.href='/'" class="fab fa-instagram fa-2x ic"></i>
-                        <i onclick="location.href='https://www.facebook.com/groups/33311002137'" class="fab fa-facebook fa-2x ic"></i>
-                        <a href="mailto:webstartup1014@gmail.com"><i class="fas fa-envelope fa-2x ic"></i></a>    
+                        <i onclick="location.href='https://www.facebook.com/groups/33311002137'"
+                            class="fab fa-facebook fa-2x ic"></i>
+                        <a href="mailto:webstartup1014@gmail.com"><i class="fas fa-envelope fa-2x ic"></i></a>
                     </div>
                     <div class="col-12 cntct">
                         © WebStartup 2020-2021
@@ -51,4 +64,4 @@
         </div>
     </section>
 
-<%- include ('partials/footer'); -%>
+    <%- include ('partials/footer'); -%>
