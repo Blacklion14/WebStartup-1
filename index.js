@@ -22,6 +22,7 @@ const {
   Year,
   subject,
   sems,
+  notification,
   Branch
 } = require('./mongoose/schemas');
 const {
@@ -46,7 +47,11 @@ var fullUrl = "/";
 app.get('/', function (req, res) {
   fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
   fetch("https://api.countapi.xyz/update/premnotes/notes?amount=1");
-  res.render("index")
+  notification.find((err,results) => {
+    res.render("index" ,{
+      resl : results,
+    });
+  });
 });
 
 app.get('/notes', function (req, res) {
@@ -141,7 +146,18 @@ app.get('/dev', function (req, res) {
   //__dirname : It will resolve to your project folder.
 });
 
+app.get("/compose", function (req, res) {
+  res.render("compose");
+});
 
+app.post("/compose", function (req, res) {
+  const noti = new notification({
+    text: req.body.composeText
+  });
+
+  noti.save();
+  res.redirect("/");
+});
 
 const Port = process.env.PORT || 8080 ;
 
