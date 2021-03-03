@@ -46,7 +46,8 @@ var fullUrl = "/";
 
 app.get('/', function (req, res) {
   fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-  fetch("https://api.countapi.xyz/update/premnotes/notes?amount=1");
+  if(req.get('host')!="localhost:8080")
+  {fetch("https://api.countapi.xyz/update/premnotes/notes?amount=1");}
   notification.find((err,results) => {
     res.render("index" ,{
       resl : results,

@@ -72,6 +72,7 @@ h5{
     text-align: center;
     background-color: #dc3545;
     color: white;
+    border-radius: 3%;
 }
 
 .new{
@@ -81,6 +82,9 @@ h5{
     padding: 2% 2%;
     border-radius: 1%;  
     margin-bottom: 3%;
+    border: #17a2b8 solid 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 li{ 
