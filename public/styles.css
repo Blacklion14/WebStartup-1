@@ -97,7 +97,10 @@ li:not(:last-child){
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
+.giphy{
+    width: 40px;
+    height: 30px;
+}
 
 
 .image {
@@ -131,6 +134,11 @@ i {
 
 .ic {
     padding: 2% 2%;
+}
+
+
+.dis-0{
+    display: none;
 }
 
 @media(max-width:1183) {
