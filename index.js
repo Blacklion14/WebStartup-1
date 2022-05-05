@@ -176,6 +176,20 @@ app.post("/compose1", function (req, res) {
   res.redirect("/compose1");
 });
 
+app.get("/removeData", function (req, res) {
+  res.render("removeData");
+});
+
+app.post("/removeData",async function (req, res) {
+  var data = req.body.removeData;
+  var query = {
+    text:data,
+  }
+  const noti = await notification.deleteOne(query);
+
+  res.redirect("/");
+});
+
 const Port = process.env.PORT || 8080 ;
 
 app.listen(Port, () => {
