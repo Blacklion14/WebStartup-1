@@ -2,7 +2,7 @@ var express = require('express');
 const {
   dirname
 } = require('path');
-let alert = require('alert'); 
+let alert = require('alert');
 const path = require("path");
 const {
   render
@@ -47,16 +47,25 @@ var fullUrl = "/";
 
 app.get('/', function (req, res) {
   fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-  if(req.get('host')!="localhost:8080")
-  {fetch("https://api.countapi.xyz/update/premnotes/notes?amount=1");}
-  notification.find((err,results) => {
-    num.find((err,result) => {
-      res.render("index" ,{
-        resl : results,
-        resl2 : result,
+  if (req.get('host') != "localhost:8080") {
+    fetch("https://api.countapi.xyz/update/premnotes/notes?amount=1");
+  }
+  try {
+    notification.find((err, results) => {
+      num.find((err, result) => {
+        res.render("index", {
+          resl: results,
+          resl2: result,
+        });
       });
-    }); 
-  });
+    });
+  } catch {
+    var result = [{
+      value: "0",
+    }];
+    var results = [];
+    res.render("index");
+  }
 });
 
 app.get('/notes', function (req, res) {
@@ -138,9 +147,9 @@ app.post('/email', (req, res) => {
         message: 'Internal Error'
       });
     } else {
-      
+
       alert("form submitted")
-    res.redirect(fullUrl);
+      res.redirect(fullUrl);
     }
   });
 
@@ -180,17 +189,17 @@ app.get("/removeData", function (req, res) {
   res.render("removeData");
 });
 
-app.post("/removeData",async function (req, res) {
+app.post("/removeData", async function (req, res) {
   var data = req.body.removeData;
   var query = {
-    text:data,
+    text: data,
   }
   const noti = await notification.deleteOne(query);
 
   res.redirect("/");
 });
 
-const Port = process.env.PORT || 8080 ;
+const Port = process.env.PORT || 8080;
 
 app.listen(Port, () => {
   console.log("Your server is started at port " + Port);
